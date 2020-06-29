@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_area"
+        android:layout_width="95dp"
+        android:layout_height="@dimen/_28dp"
+        android:layout_marginTop="@dimen/_12dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="涧西区"
+        android:textSize="@dimen/_14dp" />
+
+</LinearLayout>

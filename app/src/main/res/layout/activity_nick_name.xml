@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <!--修改昵称页面和修改职业界面通用-->
+    <include layout="@layout/layout_title" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:text="请输入您的昵称"
+        android:textColor="@color/theme"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etNickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_linear_background_gray"
+            android:hint="请输入昵称"
+            android:inputType="text"
+            android:paddingStart="15dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="45dp"
+            android:paddingBottom="15dp"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/ivClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/etNickName"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@null"
+            android:padding="8dp"
+            android:src="@mipmap/clear"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

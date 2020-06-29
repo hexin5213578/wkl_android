@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确认收货成功!"
+        android:layout_gravity="center_horizontal"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/tvToMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="去首页"
+            android:textColor="@color/theme"
+            android:background="@drawable/shape_strock_theme"
+            android:textSize="13sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"/>
+        <TextView
+            android:id="@+id/tvToEvaluate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="去评价"
+            android:textColor="@color/theme"
+            android:background="@drawable/shape_strock_theme"
+            android:textSize="13sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingStart="10dp"
+            android:layout_marginStart="20dp"
+            android:paddingEnd="10dp"/>
+    </LinearLayout>
+</LinearLayout>

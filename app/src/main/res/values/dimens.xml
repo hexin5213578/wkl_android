@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="line">0.5dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+
+    <dimen name="_1dp">1dp</dimen>
+    <dimen name="_2dp">2dp</dimen>
+    <dimen name="_3dp">3dp</dimen>
+    <dimen name="_4dp">4dp</dimen>
+    <dimen name="_5dp">5dp</dimen>
+    <dimen name="_6dp">6dp</dimen>
+    <dimen name="_7dp">7dp</dimen>
+    <dimen name="_8dp">8dp</dimen>
+    <dimen name="_9dp">9dp</dimen>
+    <dimen name="_10dp">10dp</dimen>
+    <dimen name="_11dp">11dp</dimen>
+    <dimen name="_12dp">12dp</dimen>
+    <dimen name="_13dp">13dp</dimen>
+    <dimen name="_14dp">14dp</dimen>
+    <dimen name="_15dp">15dp</dimen>
+    <dimen name="_16dp">16dp</dimen>
+    <dimen name="_17dp">17dp</dimen>
+    <dimen name="_18dp">18dp</dimen>
+    <dimen name="_19dp">19dp</dimen>
+    <dimen name="_20dp">20dp</dimen>
+    <dimen name="_21dp">21dp</dimen>
+    <dimen name="_22dp">22dp</dimen>
+    <dimen name="_23dp">23dp</dimen>
+    <dimen name="_24dp">24dp</dimen>
+    <dimen name="_25dp">25dp</dimen>
+    <dimen name="_26dp">26dp</dimen>
+    <dimen name="_27dp">27dp</dimen>
+    <dimen name="_28dp">28dp</dimen>
+    <dimen name="_29dp">29dp</dimen>
+    <dimen name="_30dp">30dp</dimen>
+    <dimen name="_33dp">33dp</dimen>
+    <dimen name="_34dp">34dp</dimen>
+    <dimen name="_35dp">35dp</dimen>
+    <dimen name="_37dp">37dp</dimen>
+    <dimen name="_40dp">40dp</dimen>
+    <dimen name="_44dp">44dp</dimen>
+    <dimen name="_45dp">45dp</dimen>
+    <dimen name="_46dp">46dp</dimen>
+    <dimen name="_48dp">48dp</dimen>
+    <dimen name="_50dp">50dp</dimen>
+    <dimen name="_60dp">60dp</dimen>
+    <dimen name="_63dp">63dp</dimen>
+    <dimen name="_65dp">65dp</dimen>
+    <dimen name="_66dp">66dp</dimen>
+    <dimen name="_70dp">70dp</dimen>
+    <dimen name="_76dp">76dp</dimen>
+    <dimen name="_80dp">80dp</dimen>
+    <dimen name="_87dp">87dp</dimen>
+    <dimen name="_90dp">90dp</dimen>
+    <dimen name="_104dp">104dp</dimen>
+    <dimen name="_100dp">100dp</dimen>
+    <dimen name="_117dp">117dp</dimen>
+    <dimen name="_200dp">200dp</dimen>
+
+    <dimen name="ts_9">9sp</dimen>
+    <dimen name="ts_10">10sp</dimen>
+    <dimen name="ts_11">11sp</dimen>
+    <dimen name="ts_12">12sp</dimen>
+    <dimen name="ts_13">13sp</dimen>
+    <dimen name="ts_14">14sp</dimen>
+    <dimen name="ts_15">15sp</dimen>
+    <dimen name="ts_16">16sp</dimen>
+    <dimen name="ts_17">17sp</dimen>
+    <dimen name="ts_18">18sp</dimen>
+    <dimen name="ts_19">19sp</dimen>
+    <dimen name="ts_20">20sp</dimen>
+    <dimen name="ts_22">22sp</dimen>
+    <dimen name="ts_23">23sp</dimen>
+    <dimen name="ts_24">24sp</dimen>
+    <dimen name="ts_25">25sp</dimen>
+    <dimen name="ts_28">28sp</dimen>
+    <dimen name="ts_30">30sp</dimen>
+
+    <!-- 适用于水平的间隔（左右距离屏幕）-->
+    <dimen name="common_padding">@dimen/_15dp</dimen>
+
+    <dimen name="fragment_my_padding">@dimen/_10dp</dimen>
+
+    <dimen name="titlebar_height">@dimen/_44dp</dimen>
+
+    <dimen name="tab_layout_height">@dimen/_50dp</dimen>
+
+    <dimen name="loadingview_size">@dimen/_70dp</dimen>
+    <dimen name="progress_dialog_padding">@dimen/_10dp</dimen>
+    <dimen name="vip_center_rights_padding">@dimen/_15dp</dimen>
+    <dimen name="vip_center_padding">@dimen/_18dp</dimen>
+    <dimen name="order_detail_btn_horizontal_padding">@dimen/_11dp</dimen>
+    <dimen name="order_detail_btn_margin_left">@dimen/_10dp</dimen>
+    <dimen name="home_page_yituosan_margin_vertical">@dimen/_15dp</dimen>
+    <dimen name="home_page_single_margin_vertical">@dimen/_15dp</dimen>
+</resources>

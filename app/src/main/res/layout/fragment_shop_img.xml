@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/_18dp"
+        android:paddingTop="@dimen/_10dp"
+        android:paddingBottom="@dimen/_10dp">
+
+        <TextView
+            android:id="@+id/tv_photo"
+            android:layout_width="110dp"
+            android:layout_height="@dimen/_34dp"
+            android:background="@color/color_f8f8f8"
+            android:gravity="center"
+            android:text="照片 3"
+            android:textColor="@color/color_f3434e"
+            android:textSize="@dimen/_14dp" />
+
+        <TextView
+            android:id="@+id/tv_img"
+            android:layout_width="110dp"
+            android:layout_height="@dimen/_34dp"
+            android:layout_marginLeft="@dimen/_9dp"
+            android:background="@color/color_f8f8f8"
+            android:gravity="center"
+            android:text="全景 3"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/_14dp" />
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rvShopImg"
+        android:paddingLeft="@dimen/_15dp"
+        android:paddingRight="@dimen/_15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+       />
+
+
+</LinearLayout>

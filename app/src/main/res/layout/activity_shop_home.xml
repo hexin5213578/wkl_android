@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp">
+
+        <ImageView
+            android:id="@+id/ivLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:id="@+id/tvToSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_strock_bac"
+            android:drawableStart="@mipmap/search"
+            android:drawablePadding="8dp"
+            android:padding="6dp"
+            android:text="搜索店铺商品"
+            android:textColor="@color/font_black_3"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/flContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/rgMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="50dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbHome"
+            style="@style/MainTab"
+            android:drawableTop="@drawable/selector_shop_home"
+            android:text="@string/main_tab1" />
+
+        <RadioButton
+            android:id="@+id/rbGoods"
+            style="@style/MainTab"
+            android:drawableTop="@drawable/selector_shop_goods"
+            android:text="商品" />
+
+        <RadioButton
+            android:id="@+id/rbSearch"
+            style="@style/MainTab"
+            android:drawableTop="@drawable/selector_main_search"
+            android:text="@string/main_tab2" />
+
+        <RadioButton
+            android:id="@+id/rbCustomer"
+            style="@style/MainTab"
+            android:drawableTop="@drawable/selector_shop_customer"
+            android:text="客服" />
+
+    </RadioGroup>
+</LinearLayout>

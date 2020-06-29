@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">万客来</string>
+    <string name="network_disconnected">未检测到可用网络</string>
+    <string name="main_tab1">首页</string>
+    <string name="main_tab2">分类</string>
+    <string name="main_tab3">跑腿</string>
+    <string name="main_tab4">购物车</string>
+    <string name="main_tab5">我的</string>
+
+</resources>

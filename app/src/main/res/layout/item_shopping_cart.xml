@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10dp"
+    android:background="@drawable/shape_white_10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <CheckBox
+            android:id="@+id/cbShop"
+            style="@style/CheckBoxStyle"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_5dp"
+            android:enabled="false" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:drawableStart="@mipmap/order_shop"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="店铺名"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/_12dp" />
+
+        <TextView
+            android:id="@+id/tv_coupon"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_21dp"
+            android:layout_marginRight="@dimen/_5dp"
+            android:background="#ffefef"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_10dp"
+            android:paddingRight="@dimen/_10dp"
+            android:text="领券"
+            android:textColor="#f72607" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rl_sale"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_sale_type"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_14dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_45dp"
+            android:background="#f72607"
+            android:paddingLeft="@dimen/_5dp"
+            android:paddingRight="@dimen/_5dp"
+            android:text="满减"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10dp" />
+
+        <TextView
+            android:id="@+id/tv_sale_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_toRightOf="@id/tv_sale_type"
+            android:text="满100元减10元"
+            android:textColor="@color/color_000000"
+            android:textSize="@dimen/_11dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_15dp"
+            android:src="@mipmap/arrow_right" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvShoppingCartItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+</LinearLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_point06_sell"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:elevation="3dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sunfusheng.GlideImageView
+            android:id="@+id/ivPointIcon"
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_point06" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_14dp"
+            android:paddingBottom="@dimen/_5dp">
+            <!--商品名称-->
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_34dp"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="商品名称"
+                android:textColor="@color/color_666666"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tvSkuName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:text="sku"
+                android:textColor="@color/color_B3B3B3"
+                android:textSize="11dp" />
+
+
+            <!--商品属性-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¥"
+                    android:textColor="@color/font_red"
+                    android:textSize="12sp" />
+                <!--单价-->
+                <TextView
+                    android:id="@+id/tvUnitPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/font_red"
+                    android:textSize="17dp" />
+                <!--销量-->
+                <TextView
+                    android:id="@+id/tvNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5dp"
+                    android:layout_weight="1"
+                    android:text="0人付款"
+                    android:textColor="@color/color_B3B3B3"
+                    android:textSize="11dp" />
+                <!--是否包邮-->
+
+                <TextView
+                    android:id="@+id/tvFreight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/shape_border_gray_cir2"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/_4dp"
+                    android:paddingRight="@dimen/_4dp"
+                    android:text="包邮"
+                    android:textColor="@color/font_red"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tvShopName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:gravity="start"
+                android:text="店铺"
+                android:textColor="@color/color_B3B3B3"
+                android:textSize="11dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

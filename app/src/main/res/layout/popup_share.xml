@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/popup_bac"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/shape_ll_divider_gray"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvShareWechat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/wechat"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="微信"
+                android:textColor="@color/font_black_3"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvShareCircle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/wechat_circle"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="朋友圈"
+                android:textColor="@color/font_black_3"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvShareQQ"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/share_qq"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="QQ"
+                android:textColor="@color/font_black_3"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDismiss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="取消"
+            android:textColor="@color/font_black_3"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>

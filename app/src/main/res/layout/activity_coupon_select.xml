@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="452dp"
+        android:background="@drawable/bg_white_top_10"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="优惠券"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/_17dp" />
+
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingTop="@dimen/_14dp"
+                android:paddingRight="@dimen/_14dp"
+                android:src="@mipmap/clear" />
+
+            <TextView
+                android:id="@+id/tv_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_14dp"
+                android:layout_marginRight="@dimen/_40dp"
+                android:text="使用说明"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/_12dp" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tb_coupon"
+            android:layout_width="match_parent"
+            app:indicator_color="@color/color_ff383b"
+            app:indicator_corners="50dp"
+            app:indicator_gravity="fill"
+            app:tabIndicatorFullWidth="false"
+            app:tabTextColor="#0f0f0f"
+            app:tabIndicatorColor="@color/color_ff383b"
+            app:tab_height="32dp"
+            app:tab_margin="15dp"
+            app:tab_mode="scrollable"
+            android:layout_height="@dimen/_40dp" />
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_coupon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/color_ffffff"
+            android:padding="4dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_send"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40dp"
+            android:layout_marginLeft="@dimen/_17dp"
+            android:layout_marginRight="@dimen/_17dp"
+            android:background="#ff4538"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/color_ffffff"
+            android:layout_marginBottom="@dimen/_15dp"
+            android:layout_marginTop="@dimen/_15dp"
+            android:textSize="@dimen/_15dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

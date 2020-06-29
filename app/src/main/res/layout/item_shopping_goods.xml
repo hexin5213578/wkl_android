@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/_10dp"
+        android:paddingRight="@dimen/_10dp"
+        android:paddingBottom="@dimen/_10dp">
+
+        <CheckBox
+             android:id="@+id/cbGoods"
+            android:layout_marginLeft="@dimen/_10dp"
+            style="@style/GoodsCheckBoxStyle" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="@dimen/_15dp"
+            android:background="@color/color_ff5b5a"
+            android:contentDescription="@null"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="这是商品名字还挺长的blablablablablablablablaasdfasdfadsfadfa"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/_12dp" />
+
+            <TextView
+                android:id="@+id/des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_solid_gray"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="这是商品参数也有好多啊啊啊啊啊啊啊啊1112222"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/_11dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="bottom">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="￥"
+                    android:textColor="@color/color_f72607"
+                    android:textSize="@dimen/_11dp" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="2.0"
+                    android:textColor="@color/color_f72607"
+                    android:textSize="@dimen/_15dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20dp"
+                    android:background="@drawable/shape_reduce_add"
+                    android:divider="@drawable/shape_ll_divider_gray"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:id="@+id/tvReduce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="-"
+                        android:textColor="@color/color_999999"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/tvNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="1"
+                        android:textColor="@color/color_666666"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/tvAdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="+"
+                        android:textColor="@color/color_999999"
+                        android:textSize="11dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

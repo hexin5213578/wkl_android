@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="81dp"
+    android:background="@drawable/bg_ffffff_bottom_line"
+    android:gravity="center_vertical"
+    android:id="@+id/ll_bg"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_check"
+            android:layout_width="@dimen/_20dp"
+            android:layout_height="@dimen/_20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_marginRight="@dimen/_5dp"
+            android:src="@drawable/no_check"
+            android:visibility="gone" />
+
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_marginLeft="@dimen/_11dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_point06" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_11dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="百威官方旗舰店"
+                android:textColor="@color/color_333333"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_5dp"
+                android:layout_weight="1"
+                android:text="已有329人关注"
+                android:textColor="@color/color_B3B3B3"
+                android:textSize="@dimen/_11dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

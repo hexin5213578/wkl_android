@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35dp"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal"
+        android:paddingLeft="32dp">
+
+        <LinearLayout
+            android:id="@+id/ll_zh"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_zh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="综合排序"
+                android:textColor="@color/color_ff383b"
+                android:textSize="@dimen/_15dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_sale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="销量优先"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/_15dp" />
+
+
+            <ImageView
+                android:id="@+id/iv_sale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3dp"
+                android:src="@drawable/ic_down_red"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="信用"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/_15dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|right"
+            android:orientation="horizontal"
+            android:paddingRight="@dimen/_15dp">
+
+            <TextView
+                android:layout_width="@dimen/_1dp"
+                android:layout_height="@dimen/_22dp"
+                android:background="#e0e0e0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15dp"
+                android:text="筛选"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/_15dp" />
+
+            <ImageView
+                android:id="@+id/iv_line"
+                android:layout_width="@dimen/_11dp"
+                android:layout_height="@dimen/_11dp"
+                android:layout_marginLeft="@dimen/_4dp"
+                android:src="@mipmap/ic_shop_select" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

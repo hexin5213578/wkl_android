@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="type_footer" type="id" />
+    <item name="type_header" type="id" />
+    <item name="type_default" type="id" />
+
+    <!--首页商品-->
+    <item name="home_goods" type="id"/>
+    <!--首页图片组件-->
+    <item name="home_module" type="id"/>
+    <!--首页横幅广告-->
+    <item name="home_banner" type="id"/>
+
+<!--商城页的rvId-->
+    <!--交易-->
+    <item name="shop_bargain" type="id"/>
+    <!--礼品-->
+    <item name="shop_gift" type="id"/>
+    <!--扩展-->
+    <item name="shop_extension" type="id"/>
+    <!--地址-->
+    <item name="shop_address" type="id"/>
+    <!--商铺-->
+    <item name="shop_shop" type="id"/>
+    <!--加入-->
+    <item name="shop_join_in" type="id"/>
+    <!--聚合-->
+    <item name="shop_assemble" type="id"/>
+    <!--属性-->
+    <item name="shop_property" type="id"/>
+    <item name="shop_appointment" type="id"/>
+    <!--卡片-->
+    <item name="shop_wallet" type="id"/>
+
+
+    <!--添加删除图片-->
+    <item name="item_type_read_only" type="id" />
+    <item name="item_type_add" type="id" />
+    <item name="item_type_sub" type="id" />
+</resources>

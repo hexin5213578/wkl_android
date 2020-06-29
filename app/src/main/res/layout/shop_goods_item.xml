@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="111dp"
+    android:layout_height="111dp"
+    android:id="@+id/ll_bg"
+    android:layout_marginRight="@dimen/_9dp">
+
+
+    <ImageView
+        android:id="@+id/iv_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@color/color_666666" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_17dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_ff5438">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/_10dp" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="112"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/_13dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="立即抢购"
+            android:layout_marginRight="@dimen/_3dp"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/_12dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

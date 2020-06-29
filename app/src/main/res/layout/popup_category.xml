@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#88000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="取消"
+                android:textColor="@color/font_black_9"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="店铺分类"
+                android:textColor="@color/font_black_3"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="确定"
+                android:textColor="@color/theme" />
+        </RelativeLayout>
+
+        <com.zyyoona7.wheel.WheelView
+            android:id="@+id/wheelView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            app:wv_dividerColor="@color/white"
+            app:wv_dividerHeight="0.5dp"
+            app:wv_lineSpacing="11dp"
+            app:wv_selectedItemPosition="0"
+            app:wv_selectedItemTextColor="#ff8f44"
+            app:wv_showDivider="true"
+            app:wv_textAlign="center"
+            app:wv_textSize="18sp"
+            app:wv_visibleItems="7"/>
+    </LinearLayout>
+</RelativeLayout>

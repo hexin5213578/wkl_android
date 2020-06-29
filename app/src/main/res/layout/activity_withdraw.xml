@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <!--到账银行卡-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="到账银行卡"
+            android:textColor="@color/font_black_3"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/iv_bankLog"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/tv_bankName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/font_black_3"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvBankDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/font_black_6"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:divider="@drawable/shape_ll_divider_gray_10dp"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <!--提现金额-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:minHeight="80dp"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¥"
+                android:textColor="@color/font_black_3"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/etMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="请输入提现金额，单笔最低50元"
+                android:inputType="numberDecimal"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:textColor="@color/font_black_3"
+                android:textColorHint="@color/font_black_9"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <!--可用金额-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:minHeight="45dp"
+            android:padding="7dp">
+
+            <TextView
+                android:id="@+id/tvEnableMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/font_black_9"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="一周仅能提现一次，请确定金额再提现"
+            android:textColor="@color/font_black_6"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!--提交-->
+    <TextView
+        android:id="@+id/tvSubmit"
+        style="@style/BtSubmit"
+        android:layout_margin="20dp"
+        android:text="确定" />
+
+</LinearLayout>

@@ -1,0 +1,2 @@
+include ':app', 'glideimageview', ':ucrop', ':picture_library'
+rootProject.name='wkl_android'
