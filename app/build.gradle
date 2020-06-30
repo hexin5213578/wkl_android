@@ -64,9 +64,6 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
     //RecycleView
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    //OKHttp 网络框架
-    api 'com.squareup.okhttp3:okhttp:3.12.1'
-    api 'com.squareup.okhttp3:logging-interceptor:3.12.1'
     //日志库
     api 'com.orhanobut:logger:1.15'
     api 'com.google.code.gson:gson:2.8.5'

@@ -64,7 +64,7 @@ public class C {
     public static final String COLLECT_GOODS;
     public static final String DELECT_COLLECT;
     public static final String COLLECTION_SHOP;
-
+    public static final  String GET_SECKILL_SHOP;
 
     /**
      * 默认地址
@@ -118,5 +118,6 @@ public class C {
         COLLECT_GOODS = BASE_URL + "/user/userGoodsFavorite/saveOrDelete";
         DELECT_COLLECT = BASE_URL + "/user/userGoodsFavorite/deleteList";
         COLLECTION_SHOP = BASE_URL + "/user/userShopFavorite/findList/";
+        GET_SECKILL_SHOP = BASE_URL+"/goods/kill/findListByCode/3";
     }
 }

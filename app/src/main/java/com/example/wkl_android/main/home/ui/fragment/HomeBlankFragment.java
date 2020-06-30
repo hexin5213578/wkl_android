@@ -75,6 +75,7 @@ public class HomeBlankFragment extends BaseFragment<IHomeBlankView, HomeBlankPre
                 presenter.getGoodsData(currentPage, false);
             }
         });
+
         Bundle arguments = getArguments();
         if (arguments != null) {
             flag = arguments.getInt("flag");

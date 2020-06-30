@@ -21,6 +21,7 @@
 
     <!--文字颜色-->
     <color name="font_black_3">#FF333333</color>
+    <color name="font_black_4">#202020</color>
     <color name="font_black_6">#FF666666</color>
     <color name="font_black_9">#FF999999</color>
     <color name="font_red">#FF4538</color>
@@ -43,6 +44,7 @@
     <color name="color_111111">#FF111111</color>
     <!--红色-->
     <color name="color_e8382b">#FFE8382B</color>
+    <color name="color_f23a3a">#F23A3A</color>
     <color name="color_e84138">#FFE84138</color>
     <color name="color_ed6b63">#FFED6B63</color>
     <color name="color_ff5b5a">#FFFF5B5A</color>

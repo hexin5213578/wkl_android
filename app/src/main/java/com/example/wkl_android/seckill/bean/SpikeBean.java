@@ -1,5 +1,6 @@
 package com.example.wkl_android.seckill.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class SpikeBean {
@@ -48,7 +49,7 @@ public class SpikeBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable {
         /**
          * businessId : 1234358495743692800
          * killBeginCode : 3

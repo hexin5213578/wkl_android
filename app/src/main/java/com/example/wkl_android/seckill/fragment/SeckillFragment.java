@@ -1,40 +1,27 @@
-package com.example.wkl_android.seckill;
+package com.example.wkl_android.seckill.fragment;
 
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wkl_android.R;
 import com.example.wkl_android.base.all.BaseFragment;
 import com.example.wkl_android.base.all.BasePresenter;
-import com.example.wkl_android.seckill.adapter.SeckillAdapter;
 import com.example.wkl_android.seckill.adapter.SeckillDiscountAdapter;
 import com.example.wkl_android.seckill.bean.SpikeBean;
-import com.example.wkl_android.seckill.contract.SpikeContract;
-import com.example.wkl_android.seckill.presenter.SpikePresenter;
-import com.example.wkl_android.widget.rv.decoration.CustomDecoration;
-
-import org.jetbrains.annotations.Contract;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 
-public class SeckillFragment extends BaseFragment {
+public class SeckillFragment extends BaseFragment implements View.OnClickListener {
     @BindView(R.id.rvSeckill)RecyclerView rvSeckill;
     @BindView(R.id.rvDiscount)RecyclerView rvDiscount;
 
-    public static SeckillFragment newInstance() {
+    @Override
+    public void onClick(View view) {
 
-        Bundle args = new Bundle();
-
-        SeckillFragment fragment = new SeckillFragment();
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
@@ -49,12 +36,11 @@ public class SeckillFragment extends BaseFragment {
 
     @Override
     protected BasePresenter initPresenter() {
-        return new SpikePresenter(this);
+        return null;
     }
 
     @Override
     protected void getData() {
-
         GridLayoutManager manager = new GridLayoutManager(getContext(), 1);
 
         List<String> discountList = new ArrayList<>();

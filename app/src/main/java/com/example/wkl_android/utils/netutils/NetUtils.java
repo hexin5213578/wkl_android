@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.wkl_android.common.Common;
 
@@ -33,20 +34,26 @@ public class NetUtils {
     }
     private void initOkHttp() {
         //添加日志拦截器
-        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-
-        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override
+            public void log(String message) {
+                Log.e("okhttp", message);
+            }
+        });
+//        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+//
+//        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         //设置缓存时间
         OkHttpClient build = new OkHttpClient.Builder()
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(10,TimeUnit.SECONDS)
                 .writeTimeout(10,TimeUnit.SECONDS)
-                .addInterceptor(httpLoggingInterceptor)
+                .addInterceptor(logInterceptor)
                 .addInterceptor(new HeaderInterceptor())
                 .build();
 
         Retrofit.Builder builder = new Retrofit.Builder();
-        Retrofit retrofit = builder.client(build).baseUrl("39.100.87.173:30001/")
+        Retrofit retrofit = builder.client(build).baseUrl("http://39.100.87.173:30001/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -67,7 +74,7 @@ public class NetUtils {
             if(TextUtils.isEmpty(token) ){
                 return chain.proceed(request);
             }
-            Request requestNew = request.newBuilder().addHeader("Content-Type","application/x-www-form-urlencoded")
+            Request requestNew = request.newBuilder().addHeader("Content-Type","application/json;charset=UTF-8")
                     .addHeader("token", token)
                     .build();;
 
