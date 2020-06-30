@@ -3,6 +3,7 @@ package com.example.wkl_android.base.app;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -38,6 +39,7 @@ public class BaseApp extends Application {
         APP = this;
         cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         wm = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
+
     }
 
     /**

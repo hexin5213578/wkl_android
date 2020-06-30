@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wkl_android.R;
 import com.example.wkl_android.good.ui.GoodsActivity;
+import com.example.wkl_android.seckill.bean.SpikeBean;
 import com.example.wkl_android.widget.rv.adapter.BaseAdapter;
 
 import java.util.List;
@@ -19,37 +21,38 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SeckillAdapter extends BaseAdapter<String, SeckillAdapter.ViewHolder> {
-    public SeckillAdapter(Context context, List<String> data) {
-        super(context, data);
+public class SeckillAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+
+
+    private final FragmentActivity content;
+    private final List<SpikeBean.DataBean> list;
+
+    public SeckillAdapter(FragmentActivity content, List<SpikeBean.DataBean> list) {
+        this.content = content;
+        this.list = list;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.item_seckill, parent, false);
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view =View.inflate(content,R.layout.item_seckill,null);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvDiscount.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                context.startActivity(new Intent(context, GoodsActivity.class)
-                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-            }
-        });
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.tvDiscount)
-        TextView tvDiscount;
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
 
-        ViewHolder(@NonNull View itemView) {
+    public class ViewHolder extends RecyclerView.ViewHolder{
+
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
         }
     }
 }

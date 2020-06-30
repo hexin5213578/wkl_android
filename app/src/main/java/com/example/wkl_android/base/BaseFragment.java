@@ -3,6 +3,7 @@ package com.example.wkl_android.base;
 
 import android.content.Intent;
 
+import com.example.wkl_android.base.all.BaseView;
 import com.example.wkl_android.base.fragment.BaseMVPFragment;
 import com.example.wkl_android.base.preseter.BasePresenter;
 import com.example.wkl_android.base.view.IBaseView;
@@ -14,7 +15,7 @@ import com.example.wkl_android.login.login.ui.activity.LoginActivity;
  * @since 2019-05-21
  */
 public abstract class BaseFragment<V extends IBaseView, P extends BasePresenter<V>>
-        extends BaseMVPFragment<V, P> {
+        extends BaseMVPFragment<V, P>implements BaseView {
 
     /**
      * 跳转登录页面
