@@ -1,7 +1,7 @@
 package com.example.wkl_android.seckill;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -17,8 +17,6 @@ import com.example.wkl_android.base.all.BaseAvtivity;
 import com.example.wkl_android.base.all.BaseFragment;
 import com.example.wkl_android.base.all.BasePresenter;
 import com.example.wkl_android.common.Common;
-import com.example.wkl_android.http.HttpUtils;
-import com.example.wkl_android.http.callback.ICallBack;
 import com.example.wkl_android.seckill.bean.SpikeBean;
 import com.example.wkl_android.seckill.fragment.SeckillFragment;
 import com.example.wkl_android.seckill.fragment.SeckillFragmentfive;
@@ -27,13 +25,10 @@ import com.example.wkl_android.seckill.fragment.SeckillFragmentseven;
 import com.example.wkl_android.seckill.fragment.SeckillFragmentsix;
 import com.example.wkl_android.seckill.fragment.SeckillFragmentthree;
 import com.example.wkl_android.seckill.fragment.SeckillFragmenttwo;
-import com.example.wkl_android.utils.C;
 import com.example.wkl_android.utils.netutils.NetUtils;
 import com.example.wkl_android.widget.NoScrollViewPager;
 import com.google.android.material.tabs.TabLayout;
 
-import java.io.File;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -140,6 +135,74 @@ public class SeckillActivity extends BaseAvtivity implements View.OnClickListene
     protected void getData() {
         title.setText("秒杀抢购");
         back.setOnClickListener(this);
+        NetUtils.getInstance().getApis().findListByCode()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<SpikeBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+                    @Override
+                    public void onNext(SpikeBean spikeBean) {
+                        Log.d("hmy","222");
+                        List<SpikeBean.DataBean> data = spikeBean.getData();
+                        SpikeBean.DataBean dataBean = data.get(0);
+                        Log.d("hmy",data.size()+"");
+                        for (int i=0;i<data.size();i++){
+                            String killBeginTime = data.get(i).getKillBeginTime();
+                            int time = Integer.valueOf(killBeginTime.substring(11, 13));
+                            Log.d("hmy",time+"");
+                            List<SpikeBean.DataBean> list = new ArrayList<>();
+                            if(time==8){
+                                list.add(data.get(i));
+                                seckillFragment.setData(list);
+                                list.clear();
+                            }else if(time==10){
+                                list.add(data.get(i));
+                                seckillFragmenttwo.setData(list);
+                                list.clear();
+                            }else if(time==12){
+                                list.add(data.get(i));
+                                Bundle bundle = new Bundle();
+                                bundle.putParcelableArrayList("seckill", (ArrayList<? extends Parcelable>) list);
+                                seckillFragmentthree.setArguments(bundle);
+                                list.clear();
+                            }else if(time==14){
+                                list.add(data.get(i));
+                                Bundle bundle = new Bundle();
+                                bundle.putParcelableArrayList("seckill", (ArrayList<? extends Parcelable>) list);
+                                seckillFragmentfour.setArguments(bundle);
+                                list.clear();
+                            }else if(time==16){
+                                list.add(data.get(i));
+                                Bundle bundle = new Bundle();
+                                bundle.putParcelableArrayList("seckill", (ArrayList<? extends Parcelable>) list);
+                                seckillFragmentfive.setArguments(bundle);
+                                list.clear();
+                            }else if(time==18){
+                                list.add(data.get(i));
+                                Bundle bundle = new Bundle();
+                                bundle.putParcelableArrayList("seckill", (ArrayList<? extends Parcelable>) list);
+                                seckillFragmentsix.setArguments(bundle);
+                                list.clear();
+                            }else{
+                                list.add(data.get(i));
+                                Bundle bundle = new Bundle();
+                                bundle.putParcelableArrayList("seckill", (ArrayList<? extends Parcelable>) list);
+                                seckillFragmentseven.setArguments(bundle);
+                                list.clear();
+                            }
+                        }
+
+                    }
+                    @Override
+                    public void onError(Throwable e) {
+                    }
+                    @Override
+                    public void onComplete() {
+
+                    }});
 
         fragments = new ArrayList<>();
         list = new ArrayList<>();
@@ -194,103 +257,6 @@ public class SeckillActivity extends BaseAvtivity implements View.OnClickListene
         }else{
             this.viewPager.setCurrentItem(6);
         }
-
-/*        HttpUtils.getInstance().doGet(C.BASE_URL + "/goods/kill/findListByCode/3", Common.getToken(), this, new ICallBack() {
-            @Override
-            public void onSuccessIO(String responseBody) {
-                Log.d("hmy","222");
-            }
-
-            @Override
-            public void onFailedIO(Exception e) {
-                e.printStackTrace();
-            }
-
-            @Override
-            public void onStartIO() {
-
-            }
-
-            @Override
-            public void onFinished() {
-
-            }
-
-            @Override
-            public void onDownloading(int progress) {
-
-            }
-
-            @Override
-            public void onDownloadSuccess(File file) {
-
-            }
-
-            @Override
-            public void onDownloadFailed(Exception e) {
-
-            }
-
-            @Override
-            public void onBitmapSuccessIO(Bitmap bitmap) {
-
-            }
-
-            @Override
-            public void onBitmapFailedIO(Exception e) {
-
-            }
-        });*/
-
-        NetUtils.getInstance().getApis().findListByCode()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<SpikeBean>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(SpikeBean spikeBean) {
-                        Log.d("hmy","222");
-                        List<SpikeBean.DataBean> data = spikeBean.getData();
-                        for (int i=0;i<data.size();i++){
-                            String killBeginTime = data.get(i).getKillBeginTime();
-                            int time = Integer.valueOf(killBeginTime.substring(11, 13));
-                            Bundle bundle = new Bundle();
-                            bundle.putSerializable("seckill",data.get(i));
-                            if(time==8){
-                                seckillFragment.setArguments(bundle);
-                            }else if(time==10){
-                                seckillFragmenttwo.setArguments(bundle);
-                            }else if(time==12){
-                                seckillFragmentthree.setArguments(bundle);
-                            }else if(time==14){
-                                seckillFragmentfour.setArguments(bundle);
-                            }else if(time==16){
-                                seckillFragmentfive.setArguments(bundle);
-                            }else if(time==18){
-                                seckillFragmentsix.setArguments(bundle);
-                            }else{
-                                seckillFragmentseven.setArguments(bundle);
-                            }
-                        }
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Log.d("hmy","333");
-                        e.printStackTrace();
-                    }
-                    @Override
-                    public void onComplete() {
-                        Log.d("hmy","444");
-
-                    }});
-
-
         Log.d("hmy", Common.getToken());
     }
 
@@ -321,4 +287,5 @@ public class SeckillActivity extends BaseAvtivity implements View.OnClickListene
             return fragments.get(position).getTitle();
         }
     }
+
 }

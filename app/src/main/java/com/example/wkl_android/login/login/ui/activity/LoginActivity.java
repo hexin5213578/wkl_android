@@ -167,7 +167,7 @@ public class LoginActivity extends BaseActivity<ILoginView, LoginPresenter>
     private void login() {
         String phone = etPhone.getText().toString().trim();
         if (TextUtils.isEmpty(phone)) {
-            toast("请输入手机号");
+            toast("请输入账号");
             return;
         }
         String pwd = etPwd.getText().toString().trim();

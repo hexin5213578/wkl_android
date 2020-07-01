@@ -1,5 +1,8 @@
 package com.example.wkl_android.seckill.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -49,7 +52,7 @@ public class SpikeBean {
         this.data = data;
     }
 
-    public static class DataBean implements Serializable {
+    public static class DataBean implements Parcelable {
         /**
          * businessId : 1234358495743692800
          * killBeginCode : 3
@@ -192,6 +195,16 @@ public class SpikeBean {
 
         public void setSpuId(String spuId) {
             this.spuId = spuId;
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel parcel, int i) {
+
         }
     }
 }

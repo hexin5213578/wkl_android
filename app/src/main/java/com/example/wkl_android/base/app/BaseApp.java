@@ -19,6 +19,7 @@ import androidx.annotation.StringRes;
 import com.example.wkl_android.R;
 import com.example.wkl_android.utils.MD5Utils;
 import com.example.wkl_android.widget.dialog.LoadingDialog;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
  * @author li
@@ -30,7 +31,6 @@ public class BaseApp extends Application {
     private WindowManager wm;
     private Toast toast;
     private LoadingDialog loadingDialog;
-
     public static String sVersion;
 
     @Override
@@ -39,7 +39,7 @@ public class BaseApp extends Application {
         APP = this;
         cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         wm = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
-
+        Fresco.initialize(APP);
     }
 
     /**

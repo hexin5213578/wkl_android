@@ -1,67 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_height="130.5dp"
     android:background="@drawable/shape_white_bg"
-    android:orientation="horizontal"
-    android:padding="15dp">
+    android:orientation="horizontal">
 
     <ImageView
         android:layout_width="120dp"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@mipmap/icon_point06" />
+        android:layout_height="100dp"
+        android:id="@+id/iv"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginLeft="10.5dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLines="1"
+            android:layout_marginTop="25dp"
+            android:id="@+id/tv_name"
             android:text="半小时漫画历史系列（共5册）"
-            android:textColor="@color/font_black_3"
-            android:textSize="13sp" />
+            android:textColor="#202020"
+            android:textSize="14dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6.5dp"
+            android:layout_below="@id/tv_name"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:background="@drawable/tv_bg"
             android:text="满减 199-100"
+            android:id="@+id/tv_discount"
             android:textColor="@color/font_red"
             android:textSize="13sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp">
+            android:layout_marginTop="101dp">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="￥"
                     android:textColor="@color/font_red"
                     android:textSize="13sp" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="178"
+                    android:id="@+id/zhekoujia"
                     android:textColor="@color/font_red"
                     android:textSize="17sp"
                     android:textStyle="bold" />
-
                 <TextView
-                    android:id="@+id/tvDiscount"
+                    android:id="@+id/yuanjia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -71,15 +77,17 @@
             </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="去抢购"
+                android:layout_height="24dp"
+                android:text="立即抢购"
                 android:background="@drawable/shape_but_bac"
                 android:textColor="@color/white"
-                android:textSize="13sp"
-                android:paddingTop="3dp"
-                android:paddingBottom="3dp"
+                android:textSize="12sp"
+                android:id="@+id/qianggou"
+                android:gravity="center"
+                android:layout_marginBottom="15.5dp"
+                android:layout_marginRight="15dp"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"/>
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>
