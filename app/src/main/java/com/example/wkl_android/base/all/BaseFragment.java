@@ -19,21 +19,36 @@ import butterknife.Unbinder;
 
 
 public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements BaseView {
-    private P presenter;
-    private Unbinder bind;
+    P basePresenter;
+     String title;
+//    private Unbinder bind;
     Dialog mLoadingDialog;
     public boolean mViewInflateFinished;
-    private String title;
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d("asd","111111111111111111111111111111111111111111");
+        initPresenter();
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = View.inflate(getContext(),getResId(),null);
-        presenter  = initPresenter();
-        bind = ButterKnife.bind(this,view);
-        getData();
-        getid(view);
+        View v = View.inflate(getContext(), getLayout(), null);
+        Log.d("asd","#3333333333333333333333333333333333333333333#################################");
+       // bind = ButterKnife.bind(this,v);
         mViewInflateFinished = true;
-        return view;
+        initView(v);
+        return v;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initData();
+    }
+    public P getPresenter(){
+        return basePresenter;
     }
     public void showDialog() {
         if (mLoadingDialog == null) {
@@ -53,26 +68,18 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
             mLoadingDialog.dismiss();
         }
     }
+    protected abstract void initView(View v);
+    protected abstract void initData();
+    protected abstract int getLayout();
+    protected abstract BasePresenter initPresenter();
 
-    public P getPresenter() {
-        return presenter;
-    }
-
-
-    protected abstract void getid(View view);
-    protected abstract int getResId();
-    protected abstract P initPresenter();
-    protected abstract void getData();
     @Override
     public void onDestroy() {
         super.onDestroy();
-        System.out.print("MusicFragment+onDestroy()");
-        Log.i("xxx","MusicFragment+onDestroy()");
-        if(presenter != null){
-            presenter.detachView();
-            presenter = null;
+        if(basePresenter != null){
+            basePresenter.detachView();
+            basePresenter = null;
         }
-        bind.unbind();
     }
     /**
      * fragment 提供的回调，回调当天fragment是否对用用户可见
@@ -85,20 +92,12 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
         // 如果还没有加载过数据 && 用户切换到了这个fragment
         // 那就开始加载数据
         if (mViewInflateFinished && isVisibleToUser) {
-            getData();
+            initData();
         }
     }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        System.out.print("MusicFragment+onAttach()");
-        Log.i("xxx","MusicFragment+onAttach()");
-    }
-
     private void doNetWork() {
         if (getUserVisibleHint()) {
-            getData();
+            initData();
         }
     }
     public void setTitle(String title) {

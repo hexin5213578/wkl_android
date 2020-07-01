@@ -85,6 +85,35 @@ public class SpikeBean {
         private String skuTitle;
         private String spuId;
 
+        protected DataBean(Parcel in) {
+            businessId = in.readString();
+            killBeginCode = in.readInt();
+            killBeginDate = in.readString();
+            killBeginTime = in.readString();
+            killId = in.readString();
+            killOverTime = in.readString();
+            killPrice = in.readInt();
+            killPriceRaw = in.readDouble();
+            killStock = in.readInt();
+            killStockRaw = in.readInt();
+            skuId = in.readString();
+            skuImage = in.readString();
+            skuTitle = in.readString();
+            spuId = in.readString();
+        }
+
+        public static final Creator<DataBean> CREATOR = new Creator<DataBean>() {
+            @Override
+            public DataBean createFromParcel(Parcel in) {
+                return new DataBean(in);
+            }
+
+            @Override
+            public DataBean[] newArray(int size) {
+                return new DataBean[size];
+            }
+        };
+
         public String getBusinessId() {
             return businessId;
         }
@@ -204,7 +233,20 @@ public class SpikeBean {
 
         @Override
         public void writeToParcel(Parcel parcel, int i) {
-
+            parcel.writeString(businessId);
+            parcel.writeInt(killBeginCode);
+            parcel.writeString(killBeginDate);
+            parcel.writeString(killBeginTime);
+            parcel.writeString(killId);
+            parcel.writeString(killOverTime);
+            parcel.writeInt(killPrice);
+            parcel.writeDouble(killPriceRaw);
+            parcel.writeInt(killStock);
+            parcel.writeInt(killStockRaw);
+            parcel.writeString(skuId);
+            parcel.writeString(skuImage);
+            parcel.writeString(skuTitle);
+            parcel.writeString(spuId);
         }
     }
 }

@@ -425,13 +425,22 @@
             android:screenOrientation="portrait" />
 
 
+        <activity
+            android:name=".seckill.SeckillDetailsActivity"
+            android:screenOrientation="portrait" /> <!-- 秒杀详情 -->
+
         <!-- 微信支付回调 -->
         <activity
             android:name=".wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop" />
-
-
+        <!-- 头条适配 -->
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="640" />
     </application>
 
 </manifest>

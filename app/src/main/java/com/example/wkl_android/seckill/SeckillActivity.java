@@ -1,7 +1,5 @@
 package com.example.wkl_android.seckill;
 
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -18,6 +16,7 @@ import com.example.wkl_android.base.all.BaseFragment;
 import com.example.wkl_android.base.all.BasePresenter;
 import com.example.wkl_android.common.Common;
 import com.example.wkl_android.seckill.bean.SpikeBean;
+import com.example.wkl_android.seckill.contract.SeckillContract;
 import com.example.wkl_android.seckill.fragment.SeckillFragment;
 import com.example.wkl_android.seckill.fragment.SeckillFragmentfive;
 import com.example.wkl_android.seckill.fragment.SeckillFragmentfour;
@@ -25,7 +24,7 @@ import com.example.wkl_android.seckill.fragment.SeckillFragmentseven;
 import com.example.wkl_android.seckill.fragment.SeckillFragmentsix;
 import com.example.wkl_android.seckill.fragment.SeckillFragmentthree;
 import com.example.wkl_android.seckill.fragment.SeckillFragmenttwo;
-import com.example.wkl_android.utils.netutils.NetUtils;
+import com.example.wkl_android.seckill.presenter.SeckillPresenter;
 import com.example.wkl_android.widget.NoScrollViewPager;
 import com.google.android.material.tabs.TabLayout;
 
@@ -35,15 +34,11 @@ import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * 特价秒杀
  */
-public class SeckillActivity extends BaseAvtivity implements View.OnClickListener {
+public class SeckillActivity extends BaseAvtivity implements SeckillContract.IView,View.OnClickListener {
     @BindView(R.id.ivLeft)
     View back;
     @BindView(R.id.tvTitle)
@@ -75,7 +70,7 @@ public class SeckillActivity extends BaseAvtivity implements View.OnClickListene
         }
         if(time<10){
             list.add("10:00\n未开始");
-        }else if(time>=10 && time <11){
+        }else if(time>=10 && time <12){
             list.add("10:00\n已开抢");
         }else{
             list.add("10:00\n已结束");
@@ -103,14 +98,14 @@ public class SeckillActivity extends BaseAvtivity implements View.OnClickListene
         }
         if(time<18){
             list.add("18:00\n未开始");
-        }else if(time==18){
+        }else if(time>=18 && time <20){
             list.add("18:00\n已开抢");
         }else{
             list.add("18:00\n已结束");
         }
         if(time<20){
             list.add("20:00\n未开始");
-        }else if(time>=20 && time<21){
+        }else if(time>=20 && time<22){
             list.add("20:00\n已开抢");
         }else{
             list.add("20:00\n已结束");
@@ -135,75 +130,6 @@ public class SeckillActivity extends BaseAvtivity implements View.OnClickListene
     protected void getData() {
         title.setText("秒杀抢购");
         back.setOnClickListener(this);
-        NetUtils.getInstance().getApis().findListByCode()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<SpikeBean>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-                    @Override
-                    public void onNext(SpikeBean spikeBean) {
-                        Log.d("hmy","222");
-                        List<SpikeBean.DataBean> data = spikeBean.getData();
-                        SpikeBean.DataBean dataBean = data.get(0);
-                        Log.d("hmy",data.size()+"");
-                        for (int i=0;i<data.size();i++){
-                            String killBeginTime = data.get(i).getKillBeginTime();
-                            int time = Integer.valueOf(killBeginTime.substring(11, 13));
-                            Log.d("hmy",time+"");
-                            List<SpikeBean.DataBean> list = new ArrayList<>();
-                            if(time==8){
-                                list.add(data.get(i));
-                                seckillFragment.setData(list);
-                                list.clear();
-                            }else if(time==10){
-                                list.add(data.get(i));
-                                seckillFragmenttwo.setData(list);
-                                list.clear();
-                            }else if(time==12){
-                                list.add(data.get(i));
-                                Bundle bundle = new Bundle();
-                                bundle.putParcelableArrayList("seckill", (ArrayList<? extends Parcelable>) list);
-                                seckillFragmentthree.setArguments(bundle);
-                                list.clear();
-                            }else if(time==14){
-                                list.add(data.get(i));
-                                Bundle bundle = new Bundle();
-                                bundle.putParcelableArrayList("seckill", (ArrayList<? extends Parcelable>) list);
-                                seckillFragmentfour.setArguments(bundle);
-                                list.clear();
-                            }else if(time==16){
-                                list.add(data.get(i));
-                                Bundle bundle = new Bundle();
-                                bundle.putParcelableArrayList("seckill", (ArrayList<? extends Parcelable>) list);
-                                seckillFragmentfive.setArguments(bundle);
-                                list.clear();
-                            }else if(time==18){
-                                list.add(data.get(i));
-                                Bundle bundle = new Bundle();
-                                bundle.putParcelableArrayList("seckill", (ArrayList<? extends Parcelable>) list);
-                                seckillFragmentsix.setArguments(bundle);
-                                list.clear();
-                            }else{
-                                list.add(data.get(i));
-                                Bundle bundle = new Bundle();
-                                bundle.putParcelableArrayList("seckill", (ArrayList<? extends Parcelable>) list);
-                                seckillFragmentseven.setArguments(bundle);
-                                list.clear();
-                            }
-                        }
-
-                    }
-                    @Override
-                    public void onError(Throwable e) {
-                    }
-                    @Override
-                    public void onComplete() {
-
-                    }});
-
         fragments = new ArrayList<>();
         list = new ArrayList<>();
         initData();
@@ -254,15 +180,66 @@ public class SeckillActivity extends BaseAvtivity implements View.OnClickListene
         }
         else if(time>=18 && time <20){
             this.viewPager.setCurrentItem(5);
-        }else{
+        }else if(time>=20 && time<22){
             this.viewPager.setCurrentItem(6);
+        }else{
+            this.viewPager.setCurrentItem(0);
         }
-        Log.d("hmy", Common.getToken());
+        BasePresenter basePresenter =getPresenter();
+        if(basePresenter instanceof SeckillPresenter){
+            ((SeckillPresenter) basePresenter).doGetSeckill();
+        }
     }
 
     @Override
     protected BasePresenter initPresenter() {
-        return null;
+        return new SeckillPresenter(this);
+    }
+
+    @Override
+    public void onGetSuccess(SpikeBean spikeBean) {
+        List<SpikeBean.DataBean> data = spikeBean.getData();
+        SpikeBean.DataBean dataBean = data.get(0);
+        Log.d("hmy",data.size()+"");
+        for (int i=0;i<data.size();i++){
+            String killBeginTime = data.get(i).getKillBeginTime();
+            int time = Integer.valueOf(killBeginTime.substring(11, 13));
+
+            List<SpikeBean.DataBean> list = new ArrayList<>();
+            if(time==8){
+                list.add(data.get(i));
+                seckillFragment.setData(list);
+                list.clear();
+            }else if(time==10){
+                list.add(data.get(i));
+                seckillFragmenttwo.setData(list);
+            }else if(time==12){
+                list.add(data.get(i));
+                seckillFragmentthree.setData(list);
+                list.clear();
+            }else if(time==14){
+                list.add(data.get(i));
+                seckillFragmentfour.setData(list);
+                list.clear();
+            }else if(time==16){
+                list.add(data.get(i));
+                seckillFragmentfive.setData(list);
+                list.clear();
+            }else if(time==18){
+                list.add(data.get(i));
+                seckillFragmentsix.setData(list);
+                list.clear();
+            }else{
+                list.add(data.get(i));
+                seckillFragmentseven.setData(list);
+                list.clear();
+            }
+        }
+    }
+
+    @Override
+    public void onGetError(String msg) {
+
     }
 
     public class ViewPager extends FragmentPagerAdapter{
