@@ -1,7 +1,12 @@
 package com.example.wkl_android.seckill.model;
 
+import com.example.wkl_android.common.Common;
+import com.example.wkl_android.good.model.GoodsBean;
+import com.example.wkl_android.http.HttpUtils;
+import com.example.wkl_android.http.callback.impl.JsonCallBack;
 import com.example.wkl_android.seckill.bean.SpikeBean;
 import com.example.wkl_android.seckill.contract.SeckillContract;
+import com.example.wkl_android.utils.C;
 import com.example.wkl_android.utils.netutils.NetUtils;
 
 import io.reactivex.Observer;
@@ -50,4 +55,37 @@ public class SeckillModel implements SeckillContract.IModel {
                     }
                 });
     }
+
+    @Override
+    public void doGetGoodsDetails(String url, doGetGoodsDetailsCallBack callBack) {
+        NetUtils.getInstance().getApis().findGoodDetails(url)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<GoodsBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(GoodsBean goodsBean) {
+                        if (callBack != null) {
+                            callBack.onGetGoodsDetailsSuccess(goodsBean);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (callBack != null) {
+                            callBack.onGetGoodsDetailsError(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
 }

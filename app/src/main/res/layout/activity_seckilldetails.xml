@@ -136,11 +136,20 @@
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/rl1"
                     android:background="#F8F8F8">
-
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="已结束!"
+                        android:visibility="gone"
+                        android:id="@+id/over"
+                        android:textSize="25dp"
+                        android:textColor="@color/color_f23a3a"
+                        android:gravity="center"></TextView>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="25dp"
+                        android:id="@+id/tv_daojishi"
                         android:layout_marginTop="11dp"
                         android:text="距离结束仅剩"
                         android:textColor="#717171"></TextView>
@@ -213,7 +222,8 @@
             android:layout_height="65.5dp">
             <TextView
                 android:layout_width="232.5dp"
-                android:layout_height="39dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_goodsname"
                 android:layout_marginLeft="15.5dp"
                 android:layout_centerVertical="true"
                 android:textSize="15sp"
@@ -325,8 +335,8 @@
                 android:layout_below="@id/tv_youhui"
                 android:text="139元选2件"></TextView>
             <ImageView
-                android:layout_width="6.5dp"
-                android:layout_height="12dp"
+                android:layout_width="10dp"
+                android:layout_height="15dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="15dp"
@@ -396,8 +406,8 @@
                 android:layout_height="wrap_content">
             </TextView>
             <ImageView
-                android:layout_width="6.5dp"
-                android:layout_height="12dp"
+                android:layout_width="10dp"
+                android:layout_height="15dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="15dp"
@@ -441,8 +451,8 @@
                 android:layout_height="wrap_content">
             </TextView>
             <ImageView
-                android:layout_width="6.5dp"
-                android:layout_height="12dp"
+                android:layout_width="10dp"
+                android:layout_height="15dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="15dp"
@@ -477,7 +487,7 @@
                 android:layout_height="wrap_content">
             </TextView>
         </RelativeLayout>
-        
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:background="@color/white"
@@ -669,7 +679,7 @@
                 android:textColor="#FE4443">
             </TextView>
         </RelativeLayout>
-        
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:background="@color/white"
@@ -746,10 +756,19 @@
     </View>
 </RelativeLayout>
         <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </RelativeLayout>
+        <RelativeLayout
             android:background="@color/color_B3B3B3"
             android:layout_width="match_parent"
-            android:layout_height="400dp">
-
+            android:layout_height="wrap_content">
+        <com.example.wkl_android.widget.web.NoScrollWebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         </RelativeLayout>
 
 

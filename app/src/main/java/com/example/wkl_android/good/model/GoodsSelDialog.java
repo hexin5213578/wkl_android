@@ -139,7 +139,6 @@ public class GoodsSelDialog extends DialogFragment {
                         }
                     }
 
-
                     if (num == sku.getGoodsSkuStandardVOList().size()) {
                         EventBus.getDefault().post(new AddCarEvent(sku.getSkuId() , binding.input.getText().toString()));
                         dismiss();

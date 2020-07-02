@@ -359,7 +359,6 @@ public class GoodsActivity extends BaseActivity<IGoodsView, GoodsDetailPresenter
             presenter.addCar(event.getSkuId());
         }else {
             ConfirmOrderActivity.toThisActivity(this, mGoodsBean , event.getSkuId() , event.getCount());
-
         }
 
     }

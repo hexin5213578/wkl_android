@@ -64,11 +64,8 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
@@ -107,26 +104,24 @@
 <!--                android:resource="@xml/rc_file_path" />-->
 <!--        </provider> -->
 
-
         <!-- QQ登录鉴权页面 -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
-            android:launchMode="singleTask"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="101853091" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- 注册页面 -->
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <activity
             android:name=".login.register.ui.activity.RegisterActivity"
             android:screenOrientation="portrait" /> <!-- 登录页面 -->
@@ -427,7 +422,15 @@
 
         <activity
             android:name=".seckill.SeckillDetailsActivity"
-            android:screenOrientation="portrait" /> <!-- 秒杀详情 -->
+
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 秒杀详情 -->
 
         <!-- 微信支付回调 -->
         <activity

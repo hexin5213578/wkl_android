@@ -2,6 +2,8 @@ package com.example.wkl_android.seckill.presenter;
 
 import com.example.wkl_android.base.all.BasePresenter;
 import com.example.wkl_android.base.all.BaseView;
+import com.example.wkl_android.good.model.GoodsBean;
+import com.example.wkl_android.http.callback.impl.JsonCallBack;
 import com.example.wkl_android.seckill.bean.SpikeBean;
 import com.example.wkl_android.seckill.contract.SeckillContract;
 import com.example.wkl_android.seckill.model.SeckillModel;
@@ -45,4 +47,27 @@ public class SeckillPresenter extends BasePresenter implements SeckillContract.I
             }
         });
     }
+
+    @Override
+    public void doGetGoodsDetails(String url) {
+        mModel.doGetGoodsDetails(url, new SeckillContract.IModel.doGetGoodsDetailsCallBack() {
+            @Override
+            public void onGetGoodsDetailsSuccess(GoodsBean goodsBean) {
+                BaseView baseView = getView();
+                if(baseView instanceof SeckillContract.IView){
+                    ((SeckillContract.IView) baseView).onGetGoodsDetailsSuccess(goodsBean);
+                }
+            }
+
+            @Override
+            public void onGetGoodsDetailsError(String msg) {
+                BaseView baseView = getView();
+                if(baseView instanceof SeckillContract.IView){
+                    ((SeckillContract.IView) baseView).onGetGoodsDetailsError(msg);
+                }
+            }
+        });
+    }
+
+
 }

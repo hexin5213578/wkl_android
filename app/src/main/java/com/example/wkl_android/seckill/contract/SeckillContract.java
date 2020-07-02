@@ -1,6 +1,8 @@
 package com.example.wkl_android.seckill.contract;
 
 import com.example.wkl_android.base.all.BaseView;
+import com.example.wkl_android.good.model.GoodsBean;
+import com.example.wkl_android.http.callback.impl.JsonCallBack;
 import com.example.wkl_android.seckill.bean.SpikeBean;
 
 /**
@@ -15,15 +17,24 @@ public interface SeckillContract {
     interface IView extends BaseView{
         void onGetSuccess(SpikeBean spikeBean);
         void onGetError(String msg);
+
+        void onGetGoodsDetailsSuccess(GoodsBean goodsBean);
+        void onGetGoodsDetailsError(String msg);
     }
-    interface IPresenter{
+   interface IPresenter{
         void doGetSeckill();
+        void doGetGoodsDetails(String url);
     }
     interface IModel{
         void doGetSeckill(doGetSeeckillCallBack callBack);
         interface doGetSeeckillCallBack{
             void onGetSuccess(SpikeBean spikeBean);
             void onGetError(String msg);
+        }
+        void doGetGoodsDetails(String url,doGetGoodsDetailsCallBack callBack);
+        interface doGetGoodsDetailsCallBack{
+            void onGetGoodsDetailsSuccess(GoodsBean goodsBean);
+            void onGetGoodsDetailsError(String msg);
         }
     }
 }
