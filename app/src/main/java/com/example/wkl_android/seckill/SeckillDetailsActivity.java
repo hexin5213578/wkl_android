@@ -32,7 +32,8 @@ public class SeckillDetailsActivity extends BaseAvtivity {
         Intent intent = getIntent();
         ArrayList<SpikeBean.DataBean> list = intent.getParcelableArrayListExtra("list");
         Log.d("hmy",list.get(0).getSkuTitle());
-
+        String killId = list.get(0).getKillId();
+        Log.d("hmy",killId);
 
     }
 

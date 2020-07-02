@@ -2,6 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
@@ -261,10 +263,497 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:background="@color/color_f23a3a"></RelativeLayout>
+            android:layout_height="65.5dp"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:textColor="#202020"
+                android:id="@+id/title"
+                android:textSize="14sp"
+                android:layout_marginTop="14.5dp"
+                android:text="优惠券">
+            </TextView>
+            <TextView
+                android:layout_width="35dp"
+                android:text="优惠券"
+                android:textColor="#fff"
+                android:layout_toRightOf="@id/title"
+                android:layout_marginTop="16.5dp"
+                android:id="@+id/youhui"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:background="@drawable/shape_but_bac"
+                android:layout_height="13dp">
+            </TextView>
+            <TextView
+                android:id="@+id/tv_youhui"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#FF2F1F"
+                android:layout_toRightOf="@id/youhui"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:text="每满300减30">
+            </TextView>
+            <TextView
+                android:layout_width="26dp"
+                android:text="满减"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:layout_below="@id/youhui"
+                android:layout_toRightOf="@id/title"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/manjian"
+                android:textSize="10sp"
+                android:background="@drawable/shape_but_bac"
+                android:layout_height="13dp">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:layout_toRightOf="@id/manjian"
+                android:id="@+id/tv_manjian"
+                android:layout_marginTop="6.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@id/tv_youhui"
+                android:text="139元选2件"></TextView>
+            <ImageView
+                android:layout_width="6.5dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/youhuidetails"
+                android:src="@mipmap/right_jiantou">
+            </ImageView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#fff"
+            android:layout_height="43dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="活动"
+                android:textColor="#202020"
+                android:textSize="14sp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15.5dp"
+                android:id="@+id/huodong">
+            </TextView>
+            <TextView
+                android:background="@drawable/huodong_tv_bg"
+                android:layout_width="37dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:id="@+id/xianshigou"
+                android:layout_toRightOf="@id/huodong"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:text="限时购"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/xianshigou"
+                android:layout_marginLeft="3dp"
+                android:layout_centerVertical="true"
+                android:text="最后10个小时商品将恢复原价"></TextView>
 
-            <RelativeLayout
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已选"
+                android:textColor="#202020"
+                android:textSize="14sp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15.5dp"
+                android:id="@+id/yixuan">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="12sp"
+                android:textColor="#202020"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/tv_yixuan"
+                android:text="星空黑,XL(120-140斤),1件"
+                android:layout_toRightOf="@id/yixuan"
+                android:layout_height="wrap_content">
+            </TextView>
+            <ImageView
+                android:layout_width="6.5dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:id="@+id/yixuandetails"
+                android:src="@mipmap/right_jiantou">
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="送至"
+                android:textColor="#202020"
+                android:textSize="14sp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15.5dp"
+                android:id="@+id/songzhi">
+            </TextView>
+            <ImageView
+                android:layout_width="10dp"
+                android:id="@+id/location_red"
+                android:layout_height="12dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/songzhi"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/location_red"
+                ></ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="12sp"
+                android:textColor="#202020"
+                android:id="@+id/tv_location"
+                android:layout_marginLeft="3dp"
+                android:text="上海浦东新区高行镇东靖路626弄浦江"
+                android:layout_toRightOf="@id/location_red"
+                android:layout_height="wrap_content">
+            </TextView>
+            <ImageView
+                android:layout_width="6.5dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:id="@+id/songzhidetails"
+                android:src="@mipmap/right_jiantou">
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="运费"
+                android:textColor="#202020"
+                android:textSize="14sp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15.5dp"
+                android:id="@+id/yunfei">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="12sp"
+                android:textColor="#202020"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/tv_yunfei"
+                android:text="免运费"
+                android:layout_toRightOf="@id/yunfei"
+                android:layout_height="wrap_content">
+            </TextView>
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="13dp"
+                android:id="@+id/tv_count_pingjia"
+                android:layout_height="wrap_content"
+                android:text="用户评价(0)">
+            </TextView>
+            <View
+                android:layout_width="22dp"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#FE4443">
+            </View>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            android:background="@color/white"
+            android:layout_marginRight="13dp"
+            android:layout_height="wrap_content">
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="15dp"
+                fresco:roundAsCircle="true"
+                android:id="@+id/iv_touxiang1"
+                ></com.facebook.drawee.view.SimpleDraweeView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="隔壁你蛋哥"
+                android:textColor="#202020"
+                android:textSize="12sp"
+                android:id="@+id/tv_name1"
+                android:layout_toRightOf="@id/iv_touxiang1"
+                android:layout_marginLeft="14.5dp"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019-05-26"
+                android:textSize="11sp"
+                android:textColor="#B5B5B5"
+                android:id="@+id/tv_data1"
+                android:layout_below="@id/tv_name1"
+                android:layout_toRightOf="@id/iv_touxiang1"
+                android:layout_marginLeft="14.5dp"
+                android:layout_marginTop="6.5dp"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="味道一般，东西基本新鲜，酸梅汤应该不是熬得 总体 可以12312313123"
+                android:layout_below="@id/tv_data1"
+                android:maxLines="2"
+                android:id="@+id/tv_pingjia1"
+                android:layout_marginTop="14.5dp"
+                android:layout_toRightOf="@id/iv_touxiang1"
+                android:layout_marginLeft="14.5dp"
+                android:textColor="#202020"
+                android:textSize="12sp"
+                >
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="好评:"
+                android:layout_toRightOf="@id/tv_name1"
+                android:layout_marginTop="8dp"
+                android:id="@+id/haoping1"
+                android:layout_marginLeft="140dp"
+                android:textColor="#202020"
+                android:textSize="12sp">
+            </TextView>
+            <SeekBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:max="5"
+                android:layout_toRightOf="@id/haoping1">
+            </SeekBar>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="99dp"
+                android:layout_toRightOf="@id/iv_touxiang1"
+                android:layout_marginLeft="14.5dp"
+                android:visibility="gone"
+                android:id="@+id/rc1"
+                android:layout_below="@id/tv_pingjia1"
+                android:layout_marginTop="25.5dp">
+            </androidx.recyclerview.widget.RecyclerView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            android:background="@color/white"
+            android:layout_marginRight="13dp"
+            android:layout_height="wrap_content">
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="15dp"
+                fresco:roundAsCircle="true"
+                android:id="@+id/iv_touxiang2"
+                ></com.facebook.drawee.view.SimpleDraweeView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="隔壁你蛋哥"
+                android:textColor="#202020"
+                android:textSize="12sp"
+                android:id="@+id/tv_name2"
+                android:layout_toRightOf="@id/iv_touxiang2"
+                android:layout_marginLeft="14.5dp"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019-05-26"
+                android:textSize="11sp"
+                android:textColor="#B5B5B5"
+                android:id="@+id/tv_data2"
+                android:layout_below="@id/tv_name2"
+                android:layout_toRightOf="@id/iv_touxiang2"
+                android:layout_marginLeft="14.5dp"
+                android:layout_marginTop="6.5dp"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="味道一般，东西基本新鲜，酸梅汤应该不是熬得 总体 可以12312313123"
+                android:layout_below="@id/tv_data2"
+                android:maxLines="2"
+                android:id="@+id/tv_pingjia2"
+                android:layout_marginTop="14.5dp"
+                android:layout_toRightOf="@id/iv_touxiang2"
+                android:layout_marginLeft="14.5dp"
+                android:textColor="#202020"
+                android:textSize="12sp"
+                >
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="好评:"
+                android:layout_toRightOf="@id/tv_name2"
+                android:layout_marginTop="8dp"
+                android:id="@+id/haoping2"
+                android:layout_marginLeft="140dp"
+                android:textColor="#202020"
+                android:textSize="12sp">
+            </TextView>
+            <SeekBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:max="5"
+                android:layout_toRightOf="@id/haoping2">
+            </SeekBar>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="99dp"
+                android:layout_toRightOf="@id/iv_touxiang2"
+                android:layout_marginLeft="14.5dp"
+                android:visibility="gone"
+                android:id="@+id/rc2"
+                android:layout_below="@id/tv_pingjia2"
+                android:layout_marginTop="25.5dp">
+            </androidx.recyclerview.widget.RecyclerView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="89dp"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查看更多评价"
+                android:id="@+id/tv_seemore"
+                android:textSize="12sp"
+                android:layout_centerInParent="true"
+                android:textColor="#FE4443">
+            </TextView>
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="15.5dp"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/iv_dianputouxiang">
+            </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_toRightOf="@id/iv_dianputouxiang"
+                android:layout_marginTop="15dp"
+                android:id="@+id/tv_dianpuname"
+                android:layout_marginLeft="5dp"
+                android:textColor="#202020"
+                android:text="好厨房酸菜鱼">
+            </TextView>
+            <TextView
+                android:id="@+id/iv_haopinglv"
+                android:layout_width="wrap_content"
+                android:layout_toRightOf="@id/iv_dianputouxiang"
+                android:layout_marginLeft="5dp"
+                android:textSize="12sp"
+                android:textColor="#B5B5B5"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/tv_dianpuname"
+                android:layout_height="wrap_content"
+                android:text="好评率99.8% | 五年老店 |">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2345人关注"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="12sp"
+                android:layout_below="@+id/tv_dianpuname"
+                android:layout_toRightOf="@id/iv_haopinglv"
+                android:textColor="#FE4443"></TextView>
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="22dp"
+                android:text="进店"
+                android:id="@+id/bt_goindianpu"
+                android:textColor="#FE4443"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15.5dp"
+                android:layout_marginTop="23.5dp"
+                android:background="@drawable/bt_bg"></Button>
+
+        </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="44.5dp">
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_height="wrap_content"
+        android:text="商品详情">
+    </TextView>
+    <View
+        android:layout_width="22dp"
+        android:layout_height="3dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#FE4443">
+    </View>
+</RelativeLayout>
+        <RelativeLayout
+            android:background="@color/color_B3B3B3"
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="59.7dp">
                 <TextView
@@ -278,7 +767,6 @@
                     android:text="客服"
                     android:textColor="@color/font_black_6"
                     android:textSize="12sp" />
-
                 <TextView
                     android:id="@+id/dianpu"
                     android:layout_toRightOf="@id/kefu"
@@ -309,7 +797,7 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/tvAddShoppingCart"
+                    android:id="@+id/tv_AddShoppingCart"
                     android:layout_width="wrap_content"
                     android:layout_height="36.5dp"
                     android:layout_gravity="center_vertical"
@@ -320,13 +808,13 @@
                     android:gravity="center"
                     android:minWidth="@dimen/_90dp"
                     android:paddingStart="10dp"
-                    android:layout_toLeftOf="@id/tvBuy"
+                    android:layout_toLeftOf="@id/tv_Buy"
                     android:paddingEnd="10dp"
                     android:text="加入购物车"
                     android:textColor="@color/white" />s
 
                 <TextView
-                    android:id="@+id/tvBuy"
+                    android:id="@+id/tv_Buy"
                     android:layout_width="wrap_content"
                     android:layout_height="36.5dp"
                     android:layout_alignParentRight="true"
@@ -342,11 +830,7 @@
                     android:paddingEnd="10dp"
                     android:text="立即购买"
                     android:textColor="@color/white" />
-
             </RelativeLayout>
-
-
-
     </LinearLayout>
 </ScrollView>
 

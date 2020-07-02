@@ -199,42 +199,45 @@ public class SeckillActivity extends BaseAvtivity implements SeckillContract.IVi
     @Override
     public void onGetSuccess(SpikeBean spikeBean) {
         List<SpikeBean.DataBean> data = spikeBean.getData();
-        SpikeBean.DataBean dataBean = data.get(0);
-        Log.d("hmy",data.size()+"");
-        for (int i=0;i<data.size();i++){
-            String killBeginTime = data.get(i).getKillBeginTime();
-            int time = Integer.valueOf(killBeginTime.substring(11, 13));
 
-            List<SpikeBean.DataBean> list = new ArrayList<>();
-            if(time==8){
-                list.add(data.get(i));
-                seckillFragment.setData(list);
-                list.clear();
-            }else if(time==10){
-                list.add(data.get(i));
-                seckillFragmenttwo.setData(list);
-            }else if(time==12){
-                list.add(data.get(i));
-                seckillFragmentthree.setData(list);
-                list.clear();
-            }else if(time==14){
-                list.add(data.get(i));
-                seckillFragmentfour.setData(list);
-                list.clear();
-            }else if(time==16){
-                list.add(data.get(i));
-                seckillFragmentfive.setData(list);
-                list.clear();
-            }else if(time==18){
-                list.add(data.get(i));
-                seckillFragmentsix.setData(list);
-                list.clear();
-            }else{
-                list.add(data.get(i));
-                seckillFragmentseven.setData(list);
-                list.clear();
+        if(data!=null && data.size()>0){
+            Log.d("hmy",data.size()+"");
+            for (int i=0;i<data.size();i++){
+                String killBeginTime = data.get(i).getKillBeginTime();
+                int time = Integer.valueOf(killBeginTime.substring(11, 13));
+
+                List<SpikeBean.DataBean> list = new ArrayList<>();
+                if(time==8){
+                    list.add(data.get(i));
+                    seckillFragment.setData(list);
+                    list.clear();
+                }else if(time==10){
+                    list.add(data.get(i));
+                    seckillFragmenttwo.setData(list);
+                }else if(time==12){
+                    list.add(data.get(i));
+                    seckillFragmentthree.setData(list);
+                    list.clear();
+                }else if(time==14){
+                    list.add(data.get(i));
+                    seckillFragmentfour.setData(list);
+                    list.clear();
+                }else if(time==16){
+                    list.add(data.get(i));
+                    seckillFragmentfive.setData(list);
+                    list.clear();
+                }else if(time==18){
+                    list.add(data.get(i));
+                    seckillFragmentsix.setData(list);
+                    list.clear();
+                }else{
+                    list.add(data.get(i));
+                    seckillFragmentseven.setData(list);
+                    list.clear();
+                }
             }
         }
+
     }
 
     @Override

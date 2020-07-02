@@ -2,6 +2,7 @@ package com.example.wkl_android.seckill.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,11 +51,13 @@ public class SeckillAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolde
             public void onClick(View view) {
                 if(check){
                     ((ViewHolder)holder).qianggou.setText("取消提醒");
-                    ((ViewHolder)holder).qianggou.setBackgroundColor(R.color.white);
+                    ((ViewHolder)holder).qianggou.setBackgroundDrawable(content.getResources().getDrawable(R.drawable.shape_but_bac2));
+                    ((ViewHolder)holder).qianggou.setTextColor(Color.parseColor("#FC5940"));
                     check=false;
                 }else{
                     ((ViewHolder)holder).qianggou.setText("提醒我");
-                    ((ViewHolder)holder).qianggou.setBackgroundColor(R.color.color_f23a3a);
+                    ((ViewHolder)holder).qianggou.setBackgroundDrawable(content.getResources().getDrawable(R.drawable.shape_but_bac));
+                    ((ViewHolder)holder).qianggou.setTextColor(Color.parseColor("#ffffff"));
                     check=true;
                 }
             }
