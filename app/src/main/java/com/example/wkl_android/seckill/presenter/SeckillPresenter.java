@@ -4,6 +4,7 @@ import com.example.wkl_android.base.all.BasePresenter;
 import com.example.wkl_android.base.all.BaseView;
 import com.example.wkl_android.good.model.GoodsBean;
 import com.example.wkl_android.http.callback.impl.JsonCallBack;
+import com.example.wkl_android.seckill.bean.GoodsCommentBean;
 import com.example.wkl_android.seckill.bean.SpikeBean;
 import com.example.wkl_android.seckill.contract.SeckillContract;
 import com.example.wkl_android.seckill.model.SeckillModel;
@@ -64,6 +65,27 @@ public class SeckillPresenter extends BasePresenter implements SeckillContract.I
                 BaseView baseView = getView();
                 if(baseView instanceof SeckillContract.IView){
                     ((SeckillContract.IView) baseView).onGetGoodsDetailsError(msg);
+                }
+            }
+        });
+    }
+
+    @Override
+    public void doGetGoodsComment(String url,String token) {
+        mModel.doGetGoodsComment(url, token,new SeckillContract.IModel.doGetGoodsCommentCallBack() {
+            @Override
+            public void onGetGoodsCommentSuccess(GoodsCommentBean goodsCommentBean) {
+                BaseView baseView = getView();
+                if(baseView instanceof SeckillContract.IView){
+                    ((SeckillContract.IView) baseView).onGetGoodsCommentSuccess(goodsCommentBean);
+                }
+            }
+
+            @Override
+            public void onGetGoodsCommentError(String msg) {
+                BaseView baseView = getView();
+                if(baseView instanceof SeckillContract.IView){
+                    ((SeckillContract.IView) baseView).onGetGoodsCommentError(msg);
                 }
             }
         });

@@ -16,6 +16,7 @@ import com.example.wkl_android.base.all.BaseFragment;
 import com.example.wkl_android.base.all.BasePresenter;
 import com.example.wkl_android.common.Common;
 import com.example.wkl_android.good.model.GoodsBean;
+import com.example.wkl_android.seckill.bean.GoodsCommentBean;
 import com.example.wkl_android.seckill.bean.SpikeBean;
 import com.example.wkl_android.seckill.contract.SeckillContract;
 import com.example.wkl_android.seckill.fragment.SeckillFragment;
@@ -254,6 +255,16 @@ public class SeckillActivity extends BaseAvtivity implements SeckillContract.IVi
 
     @Override
     public void onGetGoodsDetailsError(String msg) {
+
+    }
+
+    @Override
+    public void onGetGoodsCommentSuccess(GoodsCommentBean goodsCommentBean) {
+
+    }
+
+    @Override
+    public void onGetGoodsCommentError(String msg) {
 
     }
 

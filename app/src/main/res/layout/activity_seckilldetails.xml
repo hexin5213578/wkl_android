@@ -511,6 +511,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_marginTop="24dp"
+            android:id="@+id/rl4"
+            android:visibility="gone"
             android:background="@color/white"
             android:layout_marginRight="13dp"
             android:layout_height="wrap_content">
@@ -561,20 +563,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="好评:"
-                android:layout_toRightOf="@id/tv_name1"
                 android:layout_marginTop="8dp"
                 android:id="@+id/haoping1"
-                android:layout_marginLeft="140dp"
+                android:layout_marginLeft="240dp"
                 android:textColor="#202020"
                 android:textSize="12sp">
             </TextView>
-            <SeekBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
+            <com.example.wkl_android.common.RatingBar
+                android:layout_width="match_parent"
+                android:layout_height="14.5dp"
+                android:layout_marginTop="8dp"
+                fresco:starCount="5"
+                fresco:starImageSize="15.5dp"
+                fresco:starEmpty="@mipmap/xingxingkong"
+                fresco:starFill="@mipmap/xingxingman"
+                fresco:starPadding="2dp"
+                fresco:starStep="2"
+                fresco:stepSize="Full"
+                android:id="@+id/ratingBar1"
                 android:max="5"
                 android:layout_toRightOf="@id/haoping1">
-            </SeekBar>
+            </com.example.wkl_android.common.RatingBar>
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="99dp"
@@ -590,6 +599,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_marginTop="24dp"
+            android:id="@+id/rl3"
+            android:visibility="gone"
             android:background="@color/white"
             android:layout_marginRight="13dp"
             android:layout_height="wrap_content">
@@ -640,20 +651,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="好评:"
-                android:layout_toRightOf="@id/tv_name2"
                 android:layout_marginTop="8dp"
                 android:id="@+id/haoping2"
-                android:layout_marginLeft="140dp"
+                android:layout_marginLeft="240dp"
                 android:textColor="#202020"
                 android:textSize="12sp">
             </TextView>
-            <SeekBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
+            <com.example.wkl_android.common.RatingBar
+                android:layout_width="match_parent"
+                android:layout_height="14.5dp"
+                android:layout_marginTop="8dp"
+                fresco:starCount="5"
+                fresco:starImageSize="15.5dp"
+                fresco:starEmpty="@mipmap/xingxingkong"
+                fresco:starFill="@mipmap/xingxingman"
+                fresco:starPadding="2dp"
+                fresco:starStep="2"
+                fresco:stepSize="Full"
+                android:id="@+id/ratingBar2"
                 android:max="5"
                 android:layout_toRightOf="@id/haoping2">
-            </SeekBar>
+            </com.example.wkl_android.common.RatingBar>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="99dp"

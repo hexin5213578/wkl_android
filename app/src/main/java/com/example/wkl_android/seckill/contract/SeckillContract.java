@@ -3,6 +3,7 @@ package com.example.wkl_android.seckill.contract;
 import com.example.wkl_android.base.all.BaseView;
 import com.example.wkl_android.good.model.GoodsBean;
 import com.example.wkl_android.http.callback.impl.JsonCallBack;
+import com.example.wkl_android.seckill.bean.GoodsCommentBean;
 import com.example.wkl_android.seckill.bean.SpikeBean;
 
 /**
@@ -20,10 +21,15 @@ public interface SeckillContract {
 
         void onGetGoodsDetailsSuccess(GoodsBean goodsBean);
         void onGetGoodsDetailsError(String msg);
+
+        void onGetGoodsCommentSuccess(GoodsCommentBean goodsCommentBean);
+        void onGetGoodsCommentError(String  msg);
+
     }
    interface IPresenter{
         void doGetSeckill();
         void doGetGoodsDetails(String url);
+        void doGetGoodsComment(String url,String token);
     }
     interface IModel{
         void doGetSeckill(doGetSeeckillCallBack callBack);
@@ -35,6 +41,11 @@ public interface SeckillContract {
         interface doGetGoodsDetailsCallBack{
             void onGetGoodsDetailsSuccess(GoodsBean goodsBean);
             void onGetGoodsDetailsError(String msg);
+        }
+        void doGetGoodsComment(String url,String token,doGetGoodsCommentCallBack callBack);
+        interface doGetGoodsCommentCallBack{
+            void onGetGoodsCommentSuccess(GoodsCommentBean goodsCommentBean);
+            void onGetGoodsCommentError(String  msg);
         }
     }
 }

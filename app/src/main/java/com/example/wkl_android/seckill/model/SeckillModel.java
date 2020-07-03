@@ -4,6 +4,7 @@ import com.example.wkl_android.common.Common;
 import com.example.wkl_android.good.model.GoodsBean;
 import com.example.wkl_android.http.HttpUtils;
 import com.example.wkl_android.http.callback.impl.JsonCallBack;
+import com.example.wkl_android.seckill.bean.GoodsCommentBean;
 import com.example.wkl_android.seckill.bean.SpikeBean;
 import com.example.wkl_android.seckill.contract.SeckillContract;
 import com.example.wkl_android.utils.C;
@@ -78,6 +79,39 @@ public class SeckillModel implements SeckillContract.IModel {
                     public void onError(Throwable e) {
                         if (callBack != null) {
                             callBack.onGetGoodsDetailsError(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    @Override
+    public void doGetGoodsComment(String url, String token,doGetGoodsCommentCallBack callBack) {
+        NetUtils.getInstance().getApis().findGoodsComment(url,token)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<GoodsCommentBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(GoodsCommentBean goodsCommentBean) {
+                        if (callBack != null) {
+                            callBack.onGetGoodsCommentSuccess(goodsCommentBean);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (callBack != null) {
+                            callBack.onGetGoodsCommentError(e.getMessage());
+                            e.printStackTrace();
                         }
                     }
 

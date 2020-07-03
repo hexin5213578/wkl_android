@@ -103,7 +103,6 @@
 <!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
 <!--                android:resource="@xml/rc_file_path" />-->
 <!--        </provider> -->
-
         <!-- QQ登录鉴权页面 -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
@@ -113,7 +112,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="101853091" />
+                <data android:scheme=" 101853091" />
             </intent-filter>
         </activity>
         <activity
