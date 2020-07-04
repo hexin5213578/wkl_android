@@ -623,6 +623,7 @@ public class SeckillDetailsActivity extends BaseAvtivity implements CustomDialog
                         ratingBar2.setStar(goodsEstimateGrade1);
                         ratingBar2.setClickable(false);
                         List<?> goodsEstimateImageVOList1 = goodsEstimateVOListBean1.getGoodsEstimateImageVOList();
+                        //判断第二条评价的图片集合
                         if(goodsEstimateImageVOList1!=null){
                             rc2.setVisibility(View.VISIBLE);
                             GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 3);
@@ -633,11 +634,8 @@ public class SeckillDetailsActivity extends BaseAvtivity implements CustomDialog
                             rc2.setVisibility(View.GONE);
                         }
                     }
-
                 }
             }
-
-
         }
     }
 
